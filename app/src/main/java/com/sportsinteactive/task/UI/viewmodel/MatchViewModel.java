@@ -1,5 +1,6 @@
 package com.sportsinteactive.task.UI.viewmodel;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.util.Log;
 import android.widget.Toast;
@@ -20,13 +21,18 @@ public class MatchViewModel extends ViewModel {
     private static final String TAG = "MatchViewModel";
     private MutableLiveData<MatchDetailsModel.MatchDetailsData> matchLiveData=new MutableLiveData<>();
     private MutableLiveData<JsonObject> teamsJsonData = new MutableLiveData<>();
+    ProgressDialog progressDialog;
 
 
     public void getMatchDetails(Context context){
+        progressDialog = new ProgressDialog(context);
+        progressDialog.setMessage("loading");
+        progressDialog.show();
 
         new ApiService().init().getMatchDetails().enqueue(new Callback<MatchDetailsModel>() {
             @Override
             public void onResponse(Call<MatchDetailsModel> call, Response<MatchDetailsModel> response) {
+                progressDialog.dismiss();
                 Log.d("Response",response.body().getMatchDetail().toString());
 
                 if (response!=null){
@@ -54,6 +60,7 @@ public class MatchViewModel extends ViewModel {
 
             @Override
             public void onFailure(Call<MatchDetailsModel> call, Throwable t) {
+                progressDialog.dismiss();
                 Toast.makeText(context, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });

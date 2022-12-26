@@ -9,7 +9,7 @@ import android.os.Bundle;
 
 import com.sportsinteactive.task.R;
 import com.sportsinteactive.task.UI.Application.ApplicationDetails;
-import com.sportsinteactive.task.UI.Fragment.FragmentTeam1List;
+import com.sportsinteactive.task.UI.Fragment.FragmentTeamList;
 import com.sportsinteactive.task.UI.adapter.TabViewPagerAdapter;
 import com.sportsinteactive.task.UI.model.PlayerTeamModel;
 import com.sportsinteactive.task.databinding.ActivityPlayerDetailsBinding;
@@ -23,8 +23,8 @@ public class PlayerDetailsActivity extends AppCompatActivity {
     ArrayList<PlayerTeamModel.playersDetailsModel> team2 = new ArrayList<>();
     ActivityPlayerDetailsBinding binding;
     private Context mContext;
-    FragmentTeam1List fragmentTeamList;
-    FragmentTeam1List fragmentTeamList2;
+    FragmentTeamList fragmentTeamList;
+    FragmentTeamList fragmentTeamList2;
     ArrayList<Fragment> listOfFragment = new ArrayList<>();
     TabViewPagerAdapter viewPagerAdapter;
 
@@ -42,8 +42,8 @@ public class PlayerDetailsActivity extends AppCompatActivity {
         team1 = playerList.get(0).getPlayerArray();
         team2 = playerList.get(1).getPlayerArray();
 
-        fragmentTeamList = FragmentTeam1List.newInstance(mContext,team1);
-        fragmentTeamList2 = FragmentTeam1List.newInstance(mContext,team2);
+        fragmentTeamList = FragmentTeamList.newInstance(mContext,team1);
+        fragmentTeamList2 = FragmentTeamList.newInstance(mContext,team2);
 
         listOfFragment.add(fragmentTeamList);
         listOfFragment.add(fragmentTeamList2);

@@ -17,15 +17,15 @@ import com.sportsinteactive.task.databinding.FragmentTeamListBinding;
 
 import java.util.ArrayList;
 
-public class FragmentTeam1List extends Fragment {
+public class FragmentTeamList extends Fragment {
 
     FragmentTeamListBinding binding;
     private ArrayList<PlayerTeamModel.playersDetailsModel> playerTeamModels = new ArrayList<>();
     Context context;
     private  PlayerListAdapter playerListAdapter;
 
-    public static FragmentTeam1List newInstance(Context mContext, ArrayList<PlayerTeamModel.playersDetailsModel> list) {
-        FragmentTeam1List fragment = new FragmentTeam1List();
+    public static FragmentTeamList newInstance(Context mContext, ArrayList<PlayerTeamModel.playersDetailsModel> list) {
+        FragmentTeamList fragment = new FragmentTeamList();
         fragment.playerTeamModels = list;
         fragment.context = mContext;
         return fragment;

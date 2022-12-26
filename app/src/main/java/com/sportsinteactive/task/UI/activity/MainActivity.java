@@ -13,7 +13,6 @@ import android.widget.Toast;
 
 import com.google.gson.JsonObject;
 import com.sportsinteactive.task.R;
-import com.sportsinteactive.task.UI.PassArrayList;
 import com.sportsinteactive.task.UI.adapter.MatchDetailsAdapter;
 import com.sportsinteactive.task.UI.model.MatchDetailsModel;
 import com.sportsinteactive.task.UI.model.PlayerTeamModel;

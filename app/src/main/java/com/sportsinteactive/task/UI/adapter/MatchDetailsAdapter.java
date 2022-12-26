@@ -2,8 +2,6 @@ package com.sportsinteactive.task.UI.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,14 +12,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.sportsinteactive.task.R;
 import com.sportsinteactive.task.UI.Application.ApplicationDetails;
-import com.sportsinteactive.task.UI.PassArrayList;
 import com.sportsinteactive.task.UI.activity.PlayerDetailsActivity;
 import com.sportsinteactive.task.UI.model.MatchDetailsModel;
 import com.sportsinteactive.task.UI.model.PlayerTeamModel;
 import com.sportsinteactive.task.databinding.HomeRowBinding;
 
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
 public class MatchDetailsAdapter extends RecyclerView.Adapter<MatchDetailsAdapter.MatchDetailsHolder> {
